@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   submitLogin() {
     this.authService.login(this.loginForm.value).subscribe({
       next: () => this.router.navigate(['admin']),
-      error: (err) => alert(err.message)
+      error: (err: any) => alert(err.message)
     });
   }
 
