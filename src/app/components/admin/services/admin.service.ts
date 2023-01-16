@@ -7,15 +7,16 @@ import {User} from "./user";
 })
 export class AdminService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
-
-  getPersonalList() {
-    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users?_start=0&_limit=5')
+  getPersonalList(){
+    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users?_start=0&_limit=5');
   }
 
   getPerson(id: number) {
-    return this.http.get<User>('https://jsonplaceholder.typicode.com/user/${id}')
+    return this.http.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`)
   }
 
 }
+
